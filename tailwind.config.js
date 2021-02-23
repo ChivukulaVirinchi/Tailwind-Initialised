@@ -1,11 +1,52 @@
 module.exports = {
   purge: [],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
-    extend: {},
+    themeVariants: ['dark'],
+    extend: {
+      colors: {
+        primary: 'rgba(29,161,242,1.00)',
+        dark: '#15202b',
+        text: 'rgba(255, 255, 255, 1.00)',
+        hoverdarkbg2: 'rgba(255, 255, 255, 0.03)',
+        hoverbg: 'rgba(29, 161, 242, 0.1)',
+        darktext2: '#687783',
+        greenbg: 'rgba(23, 191, 99, 0.1)',
+        redbg: 'rgba(224, 36, 94,0.1)',
+        bordercolor: '#36424b',
+        darkbg2: '#192734',
+        darksearch: '#253341',
+      },
+    },
   },
   variants: {
+    backgroundColor: [
+      "hover",
+      "focus",
+      "active",
+      "odd",
+      "dark",
+      "dark:hover",
+      "dark:focus",
+      "dark:active",
+      "dark:odd",
+    ],
+    display: ["responsive", "dark"],
+    textColor: [
+      "focus-within",
+      "hover",
+      "active",
+      "dark",
+      "dark:focus-within",
+      "dark:hover",
+      "dark:active",
+    ],
+    placeholderColor: ["focus", "dark", "dark:focus"],
+    borderColor: ["focus", "hover", "dark", "dark:focus", "dark:hover"],
+    divideColor: ["dark"],
+    boxShadow: ["focus", "dark:focus"],
+    linearBorderGradients: ["responsive", "dark"],
     extend: {},
   },
-  plugins: [],
+  plugins: [require('tailwindcss-multi-theme')],
 }
